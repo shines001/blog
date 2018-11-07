@@ -19,6 +19,8 @@ e)	完全开源免费
 
 1结构名称不同
 对照关系
+
+
 ![image](https://github.com/shines001/blog/blob/master/elk/picture/1.PNG)
 
 关系型数据库       数据库             表              行                列  
