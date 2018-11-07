@@ -80,6 +80,7 @@ vm.max_map_count=655360
 观察输出是否有错误；
 执行命令，测试es是否成功启动： curl  http://localhost:9200
 成功的返回如下信息：
+
 ![](https://github.com/shines001/blog/blob/master/elk/picture/2.png)
  
 
@@ -116,7 +117,7 @@ netstat -tunlp|grep 5601   或者  ps -ef | grep node
 3.1 beats和logstash区别
 Logstash是一款强大而成熟的日志分析工具，但通过研究，我觉得还是引入beats来代替logstash;   以下是二者的比较：
 
-![](https://github.com/shines001/blog/blob/master/elk/picture/2.png3
+![](https://github.com/shines001/blog/blob/master/elk/picture/3.png
 
 
 某种意义上来说， beats是 elastic公司推出用以代替logstash的，  虽然 logstash功能相对强大些，但其使用成本、资源消耗、性能跟beats相比有很大劣势，据此个人推荐使用beats代替logstash !
