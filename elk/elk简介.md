@@ -1,5 +1,7 @@
 
 1 Elastic Search
+
+
 1.1 官方介绍
 Elasticsearch是一个基于Apache Lucene(TM)的开源搜索引擎。无论在开源还是专有领域，Lucene可以被认为是迄今为止最先进、性能最好的、功能最全的搜索引擎库。它实现以下目标：
 	分布式的实时文件存储，每个字段都被索引并可被搜索
@@ -117,7 +119,7 @@ netstat -tunlp|grep 5601   或者  ps -ef | grep node
 3.1 beats和logstash区别
 Logstash是一款强大而成熟的日志分析工具，但通过研究，我觉得还是引入beats来代替logstash;   以下是二者的比较：
 
-![](https://github.com/shines001/blog/blob/master/elk/picture/3.png
+![](https://github.com/shines001/blog/blob/master/elk/picture/3.png)
 
 
 某种意义上来说， beats是 elastic公司推出用以代替logstash的，  虽然 logstash功能相对强大些，但其使用成本、资源消耗、性能跟beats相比有很大劣势，据此个人推荐使用beats代替logstash !
