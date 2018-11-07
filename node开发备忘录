@@ -28,5 +28,12 @@ nvm  use   6.9.0
 Yarn是一个代替npm的js包管理工具
 
 创建新项目流程：
-Yarn init
-Yarn add package
+yarn init
+安装包：
+yarn add package
+yarn add package@version
+移除包：
+yarn  remove package
+安装全部依赖：
+yarn
+yarn install 
