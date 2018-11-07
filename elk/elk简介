@@ -19,7 +19,7 @@ e)	完全开源免费
 
 1结构名称不同
 对照关系
- 
+ ![](https://github.com/shines001/blog/blob/master/elk/picture/1.PNG)
 
 关系型数据库       数据库             表              行                列  
 Elasticsearch      索引               类型        文档                 域（字段）
@@ -78,6 +78,7 @@ vm.max_map_count=655360
 观察输出是否有错误；
 执行命令，测试es是否成功启动： curl  http://localhost:9200
 成功的返回如下信息：
+![](https://github.com/shines001/blog/blob/master/elk/picture/2.png)
  
 
 
@@ -113,16 +114,7 @@ netstat -tunlp|grep 5601   或者  ps -ef | grep node
 3.1 beats和logstash区别
 Logstash是一款强大而成熟的日志分析工具，但通过研究，我觉得还是引入beats来代替logstash;   以下是二者的比较：
 
-	Logstash	Beats
-功能	成熟丰富，使用场景宽	相对单一，场景稍窄
-轻重	相对较重	轻量级
-过滤能力	强大	弱
-稳定性	需要人工维护	稳定
-编程语言	Java & ruby	Go
-二次开发	难	容易
-资源消耗	大	很小，不足前者10%
-性能	较差	高
-所属公司	Elastic	Elastic
+![](https://github.com/shines001/blog/blob/master/elk/picture/2.png3
 
 
 某种意义上来说， beats是 elastic公司推出用以代替logstash的，  虽然 logstash功能相对强大些，但其使用成本、资源消耗、性能跟beats相比有很大劣势，据此个人推荐使用beats代替logstash !
@@ -153,12 +145,11 @@ Beats是一系列采集工具的总称，有以下几个子工具：
 3.3 metricbeat测试
 在测试环境部署了metricbeat进行测试， 对系统进行监控，相当于主机监控功能，然后配合  es  和 kibana可以配置出如下界面；
 
+ ![](https://github.com/shines001/blog/blob/master/elk/picture/4.png)
  
-
-
-
-
+ ![](https://github.com/shines001/blog/blob/master/elk/picture/5.png)
  
+ ![](https://github.com/shines001/blog/blob/master/elk/picture/6.png)
 
 
 
