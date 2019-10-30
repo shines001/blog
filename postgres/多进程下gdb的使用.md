@@ -18,7 +18,7 @@
 
 # detach-on-fork设置
 * 命令说明 ：  set  detach-on-fork  [on|off]
-* on :  只能调试一个进程，未被gdb调试的进程不会block， 不能切换进程
+* on :   断开调试follow-fork-mode指定的进程
 * off :  可以同时调试父子进程，另外一个进程会被阻塞在fork处
 
 # follow-fork-mode和detach-on-fork组对效果
