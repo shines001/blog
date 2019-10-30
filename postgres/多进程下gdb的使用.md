@@ -38,22 +38,5 @@
 
 
 # 跟踪postgres子进程例子
-    gdb  ./postgres
-    (gdb)set detach-on-fork off
-    (gdb)catch fork
-    (gdb) Catchpoint 1 (forked process 33512), 0x00007ffff71a8922 in fork () from /lib64/libc.so.6
-    (gdb) c
-    (gdb) Catchpoint 1 (forked process 33513), 0x00007ffff71a8922 in fork () from /lib64/libc.so.6
-    (gdb) c
-    ***客户端访问pg***
-    （gdb）Catchpoint 1 (forked process 33568), 0x00007ffff71a8922 in fork () from /lib64/libc.so.6
-    (gdb) n
-    (gdb) info inferior
-      4    process 33568     /home/postgres/my-postgres-12/src/backend/./postgres 
-      3    process 33513     /home/postgres/my-postgres-12/src/backend/./postgres 
-      2    process 33512     /home/postgres/my-postgres-12/src/backend/./postgres 
-    * 1    process 33508     /home/postgres/my-postgres-12/src/backend/./postgres
-    (gdb) inferior 4
-    (gdb) n
-    ok 现在gdb就进入postgres子进程了
+    因为  set  detach-on-fork会导致父进程阻塞，所以无法通过此工具正常调试，需要使用 attach
     
