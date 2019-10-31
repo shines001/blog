@@ -30,15 +30,18 @@
 |child|off|同时调试两个进程,启动时gdb跟子进程,主进程在fork处阻塞,可通过inferior num来切换调试主或子进程|
 
 
-
 # inferior说明
 * info inferior ： 查询正在调试的进程，每个进程会有一个编号num，被调试前面会有 *标志
 * inferior  num ： 切换调试的进程， num为通过info inferior获取的编号
       通过以上可以得出一个结论，实际上 follow-fork-mode可以随意设置，如果只有一个子进程，可以采用child模式，如果多个子进程可以采用parent模式
    这样可以减少 inferior切换的次数；
 
-# attach
+# postgres调试backend
     因为  set  detach-on-fork会导致postgres父进程阻塞，所以无法通过此工具正常调试，需要使用 attach
+    1.  postgresql.conf添加, pre_auth_delay = 60   #启用延迟认证，给attach留时间窗口
+    2.  gdb  attach  pid    #pid为处理客户端访问backend进程号
+    3.  set   breakpoint    #设置断点
+    4.  continue            #继续运行，会等待 pre_auth_delay的到期
     
  
     
