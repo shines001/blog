@@ -1,7 +1,7 @@
 
 多进程下gdb的使用
 ===========================
-由于鄙人工作需深入postgresql代码，故学习了如果调试postgresql各个子进程；
+gdb调试多进程方式以及postgres调试backend
 
 ****
 	
