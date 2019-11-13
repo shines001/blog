@@ -1,5 +1,5 @@
 
-多进程下gdb的使用
+多进程下gdb的使用及调试postgres进程
 ===========================
 gdb调试多进程方式以及postgres调试backend
 
@@ -35,7 +35,18 @@ gdb调试多进程方式以及postgres调试backend
 * inferior  num ： 切换调试的进程， num为通过info inferior获取的编号
       通过以上可以得出一个结论，实际上 follow-fork-mode可以随意设置，如果只有一个子进程，可以采用child模式，如果多个子进程可以采用parent模式
    这样可以减少 inferior切换的次数；
-
+   
+# postgres调试syslogger
+    set follow-fork-mode child    set  detach-on-fork on
+    1.  set breakpoint   #断点设置在fork之后的子进程
+    2.  r
+# postgres调试startup
+    set follow-fork-mode child    set  detach-on-fork on
+    1.  关闭日志收集功能，在配置文件中 logging_collector = off 
+    1.  set breakpoint   #断点设置在fork之后的子进程
+    2.  r
+    可以子进程和父进程不受影响的调试； 其他进程则无法这样使用
+    
 # postgres调试backend
     然而以上却对调试postgres backend没有用
     因为  set  detach-on-fork会导致postgres父进程阻塞，所以无法通过此工具正常调试，需要使用 attach
