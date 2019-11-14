@@ -1,7 +1,7 @@
 
 多进程下gdb的使用及调试postgres进程
 ===========================
-gdb调试多进程方式以及postgres调试backend
+gdb调试多进程方式以及postgres调试backend(不习惯eclipse调试，卡顿严重。。)
 
 ****
 	
