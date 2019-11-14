@@ -49,7 +49,7 @@ gdb调试多进程方式以及postgres调试backend(不习惯eclipse调试，卡
     
 # postgres调试backend
     然而以上却对调试postgres backend没有用
-    因为  set  detach-on-fork会导致postgres父进程阻塞，而backend需要跟pm父进程，而父进程阻塞，所以无法通过此工具正常调试，只能使用 attach
+    因为  set  detach-on-fork会导致postgres父进程阻塞，而backend需要跟pm父进程保持通讯，父进程阻塞，所以无法通过此工具正常调试，只能使用 attach
     1.  postgresql.conf添加, pre_auth_delay = 60   #启用延迟认证，给attach留时间窗口
     2.  gdb  attach  pid    #pid为处理客户端访问backend进程号
     3.  set   breakpoint    #设置断点
